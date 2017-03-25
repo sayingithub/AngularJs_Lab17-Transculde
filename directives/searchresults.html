@@ -1,0 +1,40 @@
+<a href="#" class="list-group-item">
+
+   <!-- Just hard coding the person name and person address
+    <h4 class="list-group-item-heading">Doe, John</h4>
+    <p class="list-group-item-text"> 222, Main Toad, SIngapore </p>
+    -->
+
+    <!--
+    All the content inside this html "searchresults.html" will be replaced as part of some other html "main.html" when using the tag <search-results>.
+    The "main.html" belongs to "mainController" and whatever model data sitting in the scope of this controller will have visibility to this page.
+    So, instead of hard coding person's name and address in this html, we can put in the scope inside the controller and make use of it, as below
+    -->
+    <!--
+    <h4 class="list-group-item-heading">{{ person.name }}</h4>
+    <p class="list-group-item-text"> {{ person.address }}</p>
+    -->
+
+    <!--
+     Using on the above approach, has some drawbacks like same directives can be used in many pages across large applications and the model data in scope can have unexpected results.
+     In order to avoid, angularJS introduced the concept of isloating the scope with different symbols like "@","=","&"
+     When the "scope" property introduced in the directive in javascript like "scope: { }" with empty, then the model data like person.name and person.address won't be displayed.
+     Meaning, whatever the controller "mainCOntroller" setting in the scope won't have effect in your directive and we can decide whatever scope values required for the directive to be in use by using "@", "=", "$"
+     Make sure the custom tag <search-results> has custom attributes defined for person.name, person.address
+    -->
+    <!-- Using Text Binding - "@" -->
+    <!--
+    <h4 class="list-group-item-heading">{{ personName }}</h4>
+    <p class="list-group-item-text"> {{ personAddress }}</p>
+    <p class="list-group-item-text"> {{ personPhone }}</p>
+    -->
+
+    <!-- Using Object Binding - "=" -->
+    <h4 class="list-group-item-heading">{{ personObject.name }}</h4>
+    <p class="list-group-item-text"> {{ personObject.address }}</p>
+    <p class="list-group-item-text"> {{ personObject.phone }}</p>
+
+    <!-- To include one document inside another -->
+    <small><ng-transclude></ng-transclude></small>
+
+</a>

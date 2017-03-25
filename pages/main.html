@@ -1,0 +1,39 @@
+<label>Search</label>
+<input type="text" value="Doe"/>
+
+<h3>Search Results</h3>
+<div class="list-group" >
+
+    <!-- in javascript we used in camel case as searchResults and in html it will be used with lower case & hyphen-->
+    <!-- Using Custom Directive in Element -->
+    <!-- Using the Text binding "@" -->
+    <!--
+     <search-results person-name="{{ person.name }}" person-address="{{ person.address }}" person-phone="{{person.phone}}"></search-results>
+    -->
+
+    <!-- Using the Object binding "=" -->
+    <!-- Note: we are not defining the person inside 2 closed and 2 open curly braces-->
+    <!-- Using angularJS ng-repeat for loop thru' -->
+    <search-results person-object="person" ng-repeat="person in people">
+        *Please narrow down the search criteria for better search results
+    </search-results>
+
+    <!-- Using the function "&" -->
+    <!--
+    <search-results person-object="person" formatted-address-function="formattedAddress(someperson)"></search-results>
+     -->
+
+    <!-- Using Custom Directive as Attribute -->
+    <!--
+    <div search-results></div>
+    -->
+
+    <!-- Using Custom Directive in Class -->
+    <!--
+    <div class="search-results"></div>
+    -->
+
+    <!-- in comments -->
+    <!-- directive: search-results -->
+
+</div>
